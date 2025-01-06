@@ -14,6 +14,21 @@ namespace Observer.ConcreteObserver
         public void Update()
         {
             Console.WriteLine("stockListView was notified");
-        } 
+            DisplayAllStocks();
+        }
+        private void DisplayAllStocks()
+        {
+            foreach (var stock in _stock.GetAllStockPrices())
+            {
+                Console.WriteLine($"{stock.Key}: {stock.Value:C}");
+            }
+        }
+    }
+    public static class StockDataExtensions
+    {
+        public static Dictionary<string, decimal> GetAllStockPrices(this Stock stock)
+        {
+            return new Dictionary<string, decimal>(stock.StockPrices);
+        }
     }
 }

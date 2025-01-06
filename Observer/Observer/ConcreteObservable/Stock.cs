@@ -6,12 +6,12 @@ namespace Observer.ConcreteObservable
     public class Stock : IObservable
     {
         private readonly List<IObserver> _observers;
-        private readonly Dictionary<string, decimal> stockPrices;
+        public Dictionary<string, decimal> StockPrices;
 
         public Stock()
         {
             _observers = new List<IObserver>();
-            stockPrices = new Dictionary<string, decimal>();
+            StockPrices = new Dictionary<string, decimal>();
         }
         public void AttachObserver(IObserver observer)
         {
@@ -31,14 +31,14 @@ namespace Observer.ConcreteObservable
         // Method to set the stock price
         public void SetStockPrice(string stockName, decimal price)
         {
-            stockPrices[stockName] = price;
+            StockPrices[stockName] = price;
             Notify();
         }
 
         // Method to get the current stock price
         public decimal GetStockPrice(string stockName)
         {
-            return stockPrices.ContainsKey(stockName) ? stockPrices[stockName] : 0;
+            return StockPrices.ContainsKey(stockName) ? StockPrices[stockName] : 0;
         }
     }
 }
