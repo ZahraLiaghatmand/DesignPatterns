@@ -5,17 +5,20 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace BetterMediator.Controls
 {
-    public abstract class UIControl
+    public abstract class UIControl(List<IMediator> observers)
     {
-        private IMediator _mediator;
-        public void SetMediator(IMediator mediator) 
-            => _mediator = mediator;
-        public void NotifyMediator(string eventType)
+        private List<IMediator> _observers = observers;
+
+        public void attach(IMediator mediator)
         {
-            _mediator?.Notify(this, eventType);
+            _observers.Add(mediator);
+        }
+        protected void NotifyMediator(string eventType)
+        {
+            foreach(var observer in  _observers)
+                observer?.Notify(this, eventType);
         }
     }
 }

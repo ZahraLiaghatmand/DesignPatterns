@@ -1,10 +1,5 @@
 ﻿using BetterMediator.Controls;
 using BetterMediator.Mediator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BetterMediator.Mediators
 {
@@ -18,13 +13,12 @@ namespace BetterMediator.Mediators
         public Mediator(TextBox userName, TextBox password, CheckBox agreement, Button signUp)
         {
             _userName = userName;
-            _userName.SetMediator(this);
+            _userName.attach(this);
             _password = password;
-            _password.SetMediator(this);
+            _password.attach(this);
             _agreement = agreement;
-            _agreement.SetMediator(this);
+            _agreement.attach(this);
             _signUp = signUp;
-            _signUp.SetMediator(this);
         }
 
         public void Notify(UIControl control, string eventType)

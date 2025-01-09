@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BetterMediator.Mediator;
 
 namespace BetterMediator.Controls
 {
-    public class TextBox : UIControl
+    public class TextBox(List<IMediator> observers) : UIControl(observers)
     {
         private string _text;
+
         public string Text {
             get => _text;
             set {

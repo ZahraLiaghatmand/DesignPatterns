@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BetterMediator.Mediator;
 
 namespace BetterMediator.Controls
 {
-    public class CheckBox : UIControl
+    public class CheckBox(List<IMediator> observers) : UIControl(observers)
     {
-        private Boolean _isChecked; 
+        private Boolean _isChecked;
+
         public Boolean IsChecked
         {
             get => _isChecked;

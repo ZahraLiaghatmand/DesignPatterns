@@ -1,14 +1,16 @@
 ﻿using BetterMediator.Controls;
+using BetterMediator.Mediator;
 using BetterMediator.Mediators;
 
-TextBox userName = new();
-TextBox password = new();
-CheckBox agreement = new();
+List<IMediator> observers = new();
+TextBox userName = new(observers);
+TextBox password = new(observers);
+CheckBox agreement = new(observers);
 Button signUp = new();
 
 Mediator mediator = new(userName, password, agreement, signUp);
 
 userName.Text = "Zahra";
 password.Text = "Password";
-agreement.IsChecked = false;
+agreement.IsChecked = true;
 signUp.Click();

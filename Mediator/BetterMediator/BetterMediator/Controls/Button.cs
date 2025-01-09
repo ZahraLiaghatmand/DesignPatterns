@@ -1,13 +1,6 @@
-﻿using BetterMediator.Mediator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BetterMediator.Controls
+﻿namespace BetterMediator.Controls
 {
-    public class Button : UIControl
+    public class Button
     {
         public Boolean IsEnabled { get; set; }
         public void Click()
