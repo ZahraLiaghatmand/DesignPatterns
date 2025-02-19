@@ -9,7 +9,23 @@ This repository contains simple implementations of various design patterns in C#
 The following design patterns are implemented in this sample code:
 
 1. **Factory Method Pattern**: Defines an interface for creating an object but leaves the choice of its type to the subclasses, creating instances of several derived classes.
-
+2. **Observer Pattern**: 
+- It is used when the state of an object changes and we need to notify other objects about this changes. 
+- Defines an Interface called the Observer with a method called update(). Now the other objecs (observers) that had to be notified can implement the update() method and figure out how to update themselves. also the Observable object needs the methods: AddObserver(Observer observer), RemoveObserver(Observer observer), NotifyObservers() which iterarate over the list of observers and calls the update on every observer's update() method.
+![Observer Pattern](<Observer Pattern.png>)
+- Push Style: We can push a value to the observer through the update() method, but if in the future there will be an observer that needs another set of values, you have to change the update method.
+![Observer Pattern Push](<Observer Pattern Push.png>)
+- Pull Style: This way the concrete observer is dependent on the concrete observable which is fine.
+![Observer Pattern pull](<Observer Pattern pull.png>)
+- Example: In excel if you change values of a data source the pie chart based on those values will change.
+3. **Mediator Pattern**: 
+- It is usefull when a bunch of objects need to talk to each other. 
+- Defines an abstract class called owner with a changed(Object object) method and every object that has changed can call on this method, so every concrete object is coupled with the concrete owner that implements the changed() method.
+![Mediator Pattern](<Mediator Pattern.png>)
+- Example: a dialogue box with some UI Controls that should be able to talk to each other like if a textbox is not empty, the button on that dialogue box should be enabled.
+![Mediator Example](<Mediator Example.png>)
+-Mediator with Observer:
+![Mediator with observer](<Mediator with observer.png>)
 ## Getting Started
 
 ### Prerequisites
