@@ -24,7 +24,7 @@ The following design patterns are implemented in this sample code:
 ![Mediator Pattern](<Images/Mediator Pattern.png>)
 - Example: a dialogue box with some UI Controls that should be able to talk to each other like if a textbox is not empty, the button on that dialogue box should be enabled.
 ![Mediator Example](<Images/Mediator Example.png>)
--Mediator with Observer:
+- Mediator with Observer:
 ![Mediator with observer](<Images/Mediator with observer.png>)
 ## Getting Started
 
