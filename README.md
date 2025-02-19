@@ -12,7 +12,7 @@ The following design patterns are implemented in this sample code:
 2. **Observer Pattern**: 
 - It is used when the state of an object changes and we need to notify other objects about this changes. 
 - Defines an Interface called the Observer with a method called update(). Now the other objecs (observers) that had to be notified can implement the update() method and figure out how to update themselves. also the Observable object needs the methods: AddObserver(Observer observer), RemoveObserver(Observer observer), NotifyObservers() which iterarate over the list of observers and calls the update on every observer's update() method.
-![Observer Pattern](<Observer Pattern.png>)
+![Observer Pattern](<Images/Observer Pattern.png>)
 - Push Style: We can push a value to the observer through the update() method, but if in the future there will be an observer that needs another set of values, you have to change the update method.
 ![Observer Pattern Push](<Observer Pattern Push.png>)
 - Pull Style: This way the concrete observer is dependent on the concrete observable which is fine.
